@@ -1,0 +1,43 @@
+----------------------------------------------------------------------------------------------------------
+|  Model: nba_game  |
+Individual
+    Values
+      .Game  Date
+      .Score
+      .Team ID - Home Team
+      .Team ID - Away Team
+Group
+    Functions
+      .FetchGames(*opponent_id, *season[], *(beg_date, end_date))
+----------------------------------------------------------------------------------------------------------
+|  Model: team_popularity  |
+Individual
+   Values
+     .Team ID
+     .Source 1
+     .Source 2
+     .Source 3
+     .Date
+  Functions
+    .Popularity score	 //use reflection to get all sources
+Group
+   Functions
+     .FetchPopularity(team_id, input_date)    //return popularity score for the closest date before input_date
+----------------------------------------------------------------------------------------------------------
+|  Model: nba_team  |
+Individual
+   Values
+     .Name
+----------------------------------------------------------------------------------------------------------
+*** features to be added later***
+out of season games
+
+
+create django site
+setup database, models, etc
+find place to grab game data
+grab game and team data for the past 5 seasons (including current one)
+find a place to grab popularity data
+grab popularity data
+automate game and popularity data collection and deletion
+see if popularity and winning are correlated
